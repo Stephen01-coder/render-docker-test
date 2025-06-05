@@ -1,8 +1,6 @@
-{
-  "name": "test-docker-app",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  }
-}
+FROM node:18
+WORKDIR /app
+COPY . .
+RUN npm install
+EXPOSE 3000
+CMD ["npm", "start"]
