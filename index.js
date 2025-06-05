@@ -1,9 +1,11 @@
 const http = require('http');
 
+const port = process.env.PORT || 3000;
+
 const server = http.createServer((req, res) => {
   res.end('Hallo vanaf Docker & Render 🚀');
 });
 
-server.listen(3000, () => {
-  console.log('Server draait op poort 3000');
+server.listen(port, () => {
+  console.log(`Server draait op poort ${port}`);
 });
